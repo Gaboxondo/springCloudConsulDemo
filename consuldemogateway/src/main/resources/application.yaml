@@ -1,0 +1,14 @@
+server:
+#  port: ${random.int(8080,8090)}
+spring:
+  application:
+    name: Gateway
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        hostname: 172.24.128.1
+        instance-id: ${spring.application.name}-1
+        health-check-interval: 3s
